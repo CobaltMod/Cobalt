@@ -36,7 +36,7 @@ object PlayerESP : Module(name = "PlayerESP", category = ModuleCategory.VISUAL) 
     get() = EspType.fromOptionIndex(espType)
 
   fun shouldOutline(entity: Entity): Boolean {
-    if (espTypeMode != EspType.OUTLINE && espTypeMode != EspType.BEAM_AND_OUTLINE) {
+    if ((espTypeMode != EspType.OUTLINE && espTypeMode != EspType.BEAM_AND_OUTLINE) || !enabled) {
       return false
     }
 
